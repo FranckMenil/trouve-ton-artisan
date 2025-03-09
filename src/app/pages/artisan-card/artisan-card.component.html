@@ -1,0 +1,82 @@
+<section class="artisan-card mx-auto max-w-5xl p-8 bg-white shadow-lg rounded-lg">
+    <!-- Section de l'en-tête avec photo et texte -->
+    <div class="artisan-header flex flex-col lg:flex-row items-center lg:items-start gap-6">
+
+        <!-- Photo de l'artisan -->
+        <div class="artisan-image flex-shrink-0">
+            <img src="{{artisan.photo}}" alt="Photo de {{ artisan.name }}" class="w-44 h-44 object-cover rounded-full shadow-lg" />
+        </div>
+
+        <!-- Informations principales -->
+        <div class="artisan-details text-center lg:text-left">
+            <h1 class="text-3xl font-bold text-[#0074c7] mb-2">{{ artisan.name }}</h1>
+            <p class="text-[#cd2c2e] text-lg font-medium mb-1"><strong>{{ artisan.specialty }}</strong></p>
+            <p class="text-[#384050] text-md"><strong>Localisation :</strong> {{ artisan.location }}</p>
+            <p class="mt-2 text-[#82b864] text-lg flex justify-center lg:justify-start items-center gap-2">
+            <strong>Note :</strong> 
+            <span class="text-yellow-500">{{ getStars(artisan.note) }}</span> 
+            <span class="text-gray-600 text-sm">({{ artisan.note }}/5)</span></p>
+        </div>
+    </div>
+
+    <!-- Â propos -->
+    <div class="about mt-8">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">À propos</h3>
+        <p class="text-gray-700 leading-relaxed">{{ artisan.about }}</p>
+    </div>
+
+    <!-- Formulaire de contact -->
+    <div class="contact-form mt-10 border border-gray-300 rounded-lg p-8 bg-gray-50 shadow-md max-w-4xl mx-auto">
+        <h3 class="text-2xl font-bold mb-6 text-blue-600 border-b border-gray-300 pb-2 text-center">Formulaire de contact</h3>
+        <form (ngSubmit)="onSubmitForm(contactForm)" #contactForm="ngForm" class="space-y-6">
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-800 mb-1">Nom :</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    ngModel
+                    required
+                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Votre nom"
+                />
+            </div>
+
+            <div>
+                <label for="subject" class="block text-sm font-medium text-gray-800 mb-1">Objet :</label>
+                <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    ngModel
+                    required
+                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Objet du message"
+                />
+            </div>
+
+            <div>
+                <label for="message" class="block text-sm font-medium text-gray-800 mb-1">Message :</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    ngModel
+                    required
+                    class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    rows="4"
+                    placeholder="Votre message">
+                </textarea>
+            </div>
+
+            <div class="text-center">
+                <button
+                    type="submit"
+                    [disabled]="!contactForm.form.valid"
+                    class="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2
+                    focus:ring-blue-500 focus:ring-offset-1 disabled:bg-gray-300 disabled:cursor-not-allowed">Envoyer
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+  

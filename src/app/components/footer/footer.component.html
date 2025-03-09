@@ -1,0 +1,23 @@
+<footer class="bg-[#0074c7] text-white py-8">
+    <div class="container mx-auto text-center">
+        <p>© 2024 Région Auvergne Rhône-Alpes</p>
+        <p>101 cours Charlemagne CS 20033 69269 LYON CEDEX 02</p>
+        <p>+33 (0)4 26 73 40 00</p>
+    </div>
+
+    <!-- Menu des pages légales -->
+    <div class="mt-4">
+        <ul class="flex flex-col justify-center text-center">
+            <li><a href="/mentions-legales" class="hover:underline">Mentions légales</a></li>
+            <li><a href="/donnees-personnelles" class="hover:underline">Données personnelles</a></li>
+            <li><a href="/accessibilite" class="hover:underline">Accessibilités</a></li>
+            <li><a href="/cookies" class="hover:underline">Cookies</a></li>
+        </ul>
+    </div>
+
+    <!-- boutton retour en haut de page -->
+    <button class="fixed bottom-4 right-4 bg-blue-500 text-white p-3 rounded-full shadow-md hover:bg-blue-600" 
+        (click)="scrollToTop()" aria-label="Revenir en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</footer>

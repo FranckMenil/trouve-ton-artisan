@@ -1,0 +1,51 @@
+<header>
+    <div class="container bg-[#f1f8fc]  font-bold mx-auto flex justify-between items-center my-4">
+        <!--logo-->
+        <a routerLink="/">
+            <img src="/assets/pictures/Logo.png" alt="Trouve ton artisan !" class="h-15">
+        </a>
+        
+        <!-- Burger Menu (visible sur mobile) -->
+        <button class="button-menu p-2 border border-gray-400 rounded" (click)="toggleMenu()">
+            <span *ngIf="!menuOpen" class="icon">&#9776;</span> <!-- Icône burger -->
+            <span *ngIf="menuOpen" class="icon">&times;</span> <!-- Icône croix -->
+        </button>
+
+        <!--navigation principale-->
+        <nav [ngClass]="{'show': menuOpen}" class="nav-links flex flex-col lg:flex-row lg:space-x-4 lg:items-center">
+            <a routerLink='/list-artisans/Bâtiment' class="px-4 hover:underline">Bâtiment</a>
+            <a routerLink="/list-artisans/Services" class="px-4 hover:underline">Services</a>
+            <a routerLink="/list-artisans/Fabrication" class="px-4 hover:underline">Fabrication</a>
+            <a routerLink="/list-artisans/Alimentation" class="px-4 hover:underline">Alimentation</a>
+        </nav>
+    </div>
+    
+    <!--barre de recherche-->
+    <div class="container mx-auto search-bar flex items-center bg-[#0074c7] p-4 rounded-lg">
+        <!-- Champ pour rechercher par nom -->
+        <input class="px-4 py-2 rounded-l-lg border border-gray-300 flex-1" 
+            type="text"
+            placeholder="Noms"
+            [(ngModel)]="searchName"
+        />
+
+        <!-- Champ pour rechercher par spécialité -->
+        <input class="px-4 py-2 border border-gray-300 flex-1"
+            type="text"
+            placeholder="Spécialités"
+            [(ngModel)]="searchSpecialty" 
+        />
+
+        <!-- Champ pour rechercher par ville -->
+        <input class="px-4 py-2  border border-gray-300 flex-1"
+            type="text"
+            placeholder="Ville"
+            [(ngModel)]="searchLocation" 
+        />
+        
+        <!-- Bouton de recherche (optionnel, pas nécessaire avec ngModel) -->
+        <button class="px-6 py-2 bg-[#00497c]  text-white font-bold rounded-r-lg" (click)="onSearch()">
+            <i class="fas fa-search"></i> Rechercher
+        </button>        
+    </div>
+</header>
