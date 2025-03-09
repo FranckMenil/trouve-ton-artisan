@@ -17,8 +17,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/trouve-ton-artisan-test-3",
-            "baseHref": "/trouve-ton-artisan-test-3/",
+            "outputPath": "dist/trouve-ton-artisan",
+            "baseHref": "/trouve-ton-artisan/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "trouve-ton-artisan-test-3:build:production"
+              "buildTarget": "trouve-ton-artisan:build:production"
             },
             "development": {
-              "buildTarget": "trouve-ton-artisan-test-3:build:development"
+              "buildTarget": "trouve-ton-artisan:build:development"
             }
           },
           "defaultConfiguration": "development"
