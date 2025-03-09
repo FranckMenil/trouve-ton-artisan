@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "trouve-ton-artisan-test-3": {
+    "trouve-ton-artisan": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
